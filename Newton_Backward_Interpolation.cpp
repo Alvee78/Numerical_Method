@@ -31,11 +31,10 @@ class Newton_Backward_Interpolation {
                     table[j][i] = table[j][i - 1] - table[j - 1][i - 1];
                 }
             }
-            for (int i = 0; i < n; ++i) {
-                cout << setw(4) << x[i] << "\t";
-                for (int j = 0; j < n - i; ++j) {
+            for (int i = 0; i < n; i++) {
+                cout << setw(4) << x[i] << '\t';
+                for (int j = 0; j <= i; j++)
                     cout << setw(4) << table[i][j] << "\t";
-                }
                 cout << endl;
             }
             double sum = table[n - 1][0];
