@@ -25,6 +25,24 @@ class Simpsons{
             integral *= (h / 3);
             cout << "Area is = " << integral << endl;
         }
+    //     void simpsons_3_8 () {
+    //     if(n % 3) {
+    //         cout << "This rule doesn't apply!\n";
+    //         return;
+    //     }
+    //     double area = y[0] + y[n];
+    //     double multi3 = 0.0, other = 0.0;
+    //     for(int i = 1 ; i < n ; i++) {
+    //         if(i %3)
+    //             other += y[i];
+    //         else
+    //             multi3 += y[i];
+    //     }
+    //     area += 3.0 * other;
+    //     area += 2.0 * multi3;
+    //     area *= (3.0 * h) / 8.0;
+    //     cout << "Approximate Integral: " << area << endl;
+    // }
 };
 
 int main() {
