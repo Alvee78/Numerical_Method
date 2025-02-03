@@ -9,13 +9,14 @@ class FalsePositionMethod {
         return x * x * x - x * x + 2;
     }
     void setInitial(){
+        srand(time(0));
         a = rand() % 10;
         b = rand() % 10 - 20;
         while(func(a) * func(b) >= 0){
-            a = rand() % 100 - 100;
-            b = rand() % 100;
+            a = rand()*1.0/RAND_MAX * 5;
+            b = rand()*1.0/RAND_MAX * -5;
         }
-        if(a > b) swap(a, b);
+        if(a < b) swap(a, b);
     }
     public:
     FalsePositionMethod(double tol = 1e-6, int maxIter = 1000) {
@@ -28,7 +29,7 @@ class FalsePositionMethod {
             c = (a* func(b) - b * func(a)) / (func(b) - func(a));
             cout << "Iteration X" << i+1 << " = " << c << endl;
             double f_c = func(c);
-            if(f_c == 0 || (b - a) / 2 < tolarance) {
+            if(fabs(f_c) < tolarance) {
                 cout << "Root is x = " << c << endl;break;
             }
             if(func(a) * f_c < 0) b = c;
